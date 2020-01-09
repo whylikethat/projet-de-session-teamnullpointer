@@ -1,0 +1,24 @@
+(begin
+
+(define NAND (lambda (p q)
+
+    (not (and p q))))
+
+
+(define OR (lambda (p q)
+
+    (define f (not p))
+    (define h (not q))
+
+    (not (and f q))))
+
+(define NOR (lambda (p q)
+
+    (not (OR p q))))
+
+(define XOR (lambda (p q)
+
+    (define f (not p))
+    (define h (not q))
+
+    (and (OR p q) (OR f h)))))
